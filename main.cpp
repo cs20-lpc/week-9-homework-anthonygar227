@@ -15,7 +15,7 @@ void simulation1() {
     Queue<int>* ticketQueue = factory.GetQueue(10);
 
     int customersServed = 0;
-    int customersTowardaway = 0;
+    int customersTurnedAway = 0;
     int customersArrived = 0;
 
     for (int i = 0; i < 100; i++) {
@@ -33,7 +33,7 @@ void simulation1() {
                 customersArrived++;
                 cout << "Event " << (i + 1) << ": New customer arrives. Queue size: " << ticketQueue->getLength() << endl;
             } catch (string& e) {
-                customersTowardaway++;
+                customersTurnedAway++;
                 cout << "Event " << (i + 1) << ": New customer turned away - " << e << endl;
             }
         }
@@ -42,7 +42,7 @@ void simulation1() {
     cout << "\n--- Simulation 1 Results ---" << endl;
     cout << "Customers Served: " << customersServed << endl;
     cout << "Customers Arrived: " << customersArrived << endl;
-    cout << "Custoemrs Turned Away: " << customersTowardaway << endl;
+    cout << "Customers Turned Away: " << customersTurnedAway << endl;
     cout << "Final Queue Size: " << ticketQueue->getLength() << endl;
 
     delete ticketQueue;
